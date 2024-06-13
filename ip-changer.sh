@@ -16,8 +16,11 @@ fi
 
 # Function to get IP address
 get_ip() {
-    url="https://www.myexternalip.com/raw"
-    get_ip=$(curl -x socks5://127.0.0.1:9050 "$url")
+    url="htttps://checkip.amazonaws.com"
+    #"https://www.myexternalip.com/raw"
+    get_ip=$(curl -s -x socks5h://127.0.0.1:9050 "$url")
+    #socks5: Local DNS resolution.
+    #socks5h: Proxy handles DNS resolution, preventing DNS leaks.
     ip=$(echo "$get_ip" | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}')
     echo "$ip"
     
@@ -43,23 +46,24 @@ EOF
 
 # Change IP address
 while true; do
-    echo -en "\033[34mEnter time interval in seconds (type 0 for infinite IP changes): \033[0m"
-    read interval
-    echo -en "\033[34mEnter number of times to change IP address (type 0 for infinite IP changes): \033[0m"
-    read times
-    
-#    read -p "\033[33mEnter time interval in seconds (type 0 for infinite IP changes): \033[0m" interval
-#    read -p "\033[33mEnter number of times to change IP address (type 0 for infinite IP changes): \033[0m" times
+    # echo -en "\033[34mEnter time interval in seconds (type 0 for infinite IP changes): \033[0m"
+    # read interval
+    # echo -en "\033[34mEnter number of times to change IP address (type 0 for infinite IP changes): \033[0m"
+    # read times 
+    read -p $'\033[34mEnter time interval in seconds (type 0 for infinite IP changes): \033[0m' interval
+    read -p $'\033[34mEnter number of times to change IP address (type 0 for infinite IP changes): \033[0m' times
 
     if [ "$interval" -eq "0" ] || [ "$times" -eq "0" ]; then
         echo "Starting infinite IP changes"
         while true; do
             change_ip
-            sleep $interval
+            interval=$(shuf -i10-20 -n1) 
+            sleep $interval # my advice is to put time interval about 20 secs, which will work longer and more efficiently.
         done
     else
         for ((i=0; i<$times; i++)); do
             change_ip
+            [[ $interval =~ ^[0-7]$ ]] && interval=$(shuf -i10-20 -n1) 
             sleep $interval
         done
     fi
