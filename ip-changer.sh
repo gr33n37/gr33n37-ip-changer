@@ -18,7 +18,9 @@ fi
 get_ip() {
     url="htttps://checkip.amazonaws.com"
     #"https://www.myexternalip.com/raw"
-    get_ip=$(curl -s -x socks5://127.0.0.1:9050 "$url")
+    get_ip=$(curl -s -x socks5h://127.0.0.1:9050 "$url")
+    #socks5: Local DNS resolution.
+    #socks5h: Proxy handles DNS resolution, preventing DNS leaks.
     ip=$(echo "$get_ip" | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}')
     echo "$ip"
     
