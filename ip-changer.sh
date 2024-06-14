@@ -1,21 +1,26 @@
 #!/bin/bash
 
+[[ "$UID" -ne 0 ]] && {
+    echo "Script must be run as root."
+    exit 1
+}
+
 install_packages() {
     local distro=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
     distro=${distro//\"/}
     
     case "$distro" in
         *"Ubuntu"* | *"Debian"*)
-            sudo apt-get update
-            sudo apt-get install -y curl tor
+            apt-get update
+            apt-get install -y curl tor
             ;;
         *"Fedora"* | *"CentOS"* | *"Red Hat"* | *"Amazon Linux"*)
-            sudo yum update
-            sudo yum install -y curl tor
+            yum update
+            yum install -y curl tor
             ;;
         *"Arch"*)
-            sudo pacman -Sy
-            sudo pacman -S --noconfirm curl tor
+            pacman -Sy
+            pacman -S --noconfirm curl tor
             ;;
         *)
             echo "Unsupported distribution: $distro. Please install curl and tor manually."
@@ -31,7 +36,7 @@ fi
 
 if ! systemctl --quiet is-active tor.service; then
     echo "Starting tor service"
-    sudo systemctl start tor.service
+    systemctl start tor.service
 fi
 
 get_ip() {
@@ -43,7 +48,7 @@ get_ip() {
 
 change_ip() {
     echo "Reloading tor service"
-    sudo systemctl reload tor.service
+    systemctl reload tor.service
     echo -e "\033[34mNew IP address: $(get_ip)\033[0m"
 }
 
