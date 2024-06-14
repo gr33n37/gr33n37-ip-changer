@@ -6,7 +6,8 @@
 }
 
 install_packages() {
-    local distro=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
+    local distro
+    distro=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
     distro=${distro//\"/}
     
     case "$distro" in
@@ -40,9 +41,10 @@ if ! systemctl --quiet is-active tor.service; then
 fi
 
 get_ip() {
-    local url="https://checkip.amazonaws.com"
-    local get_ip=$(curl -s -x socks5h://127.0.0.1:9050 "$url")
-    local ip=$(echo "$get_ip" | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}')
+    local url get_ip ip
+    url="https://checkip.amazonaws.com"
+    get_ip=$(curl -s -x socks5h://127.0.0.1:9050 "$url")
+    ip=$(echo "$get_ip" | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}')
     echo "$ip"
 }
 
@@ -63,8 +65,8 @@ cat << EOF
 EOF
 
 while true; do
-    read -p $'\033[34mEnter time interval in seconds (type 0 for infinite IP changes): \033[0m' interval
-    read -p $'\033[34mEnter number of times to change IP address (type 0 for infinite IP changes): \033[0m' times
+    read -rp $'\033[34mEnter time interval in seconds (type 0 for infinite IP changes): \033[0m' interval
+    read -rp $'\033[34mEnter number of times to change IP address (type 0 for infinite IP changes): \033[0m' times
 
     if [ "$interval" -eq "0" ] || [ "$times" -eq "0" ]; then
         echo "Starting infinite IP changes"
@@ -74,7 +76,7 @@ while true; do
             sleep "$interval"
         done
     else
-        for ((i=0; i<$times; i++)); do
+        for ((i=0; i< times; i++)); do
             change_ip
             sleep "$interval"
         done
