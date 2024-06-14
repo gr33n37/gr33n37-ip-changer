@@ -20,7 +20,6 @@ install_packages() {
             yum install -y curl tor
             ;;
         *"Arch"*)
-            pacman -Sy
             pacman -S --noconfirm curl tor
             ;;
         *)
