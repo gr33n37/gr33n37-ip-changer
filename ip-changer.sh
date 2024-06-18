@@ -64,8 +64,8 @@ cat << EOF
 EOF
 
 while true; do
-    read -rp $'\033[34mEnter time interval in seconds (type 0 for infinite IP changes): \033[0m' interval
-    read -rp $'\033[34mEnter number of times to change IP address (type 0 for infinite IP changes): \033[0m' times
+    read -rp $'\033[34mEnter time interval in seconds (type 0 for infinite IP changes): 5
+    read -rp $'\033[34mEnter number of times to change IP address (type 0 for infinite IP changes): 0
 
     if [ "$interval" -eq "0" ] || [ "$times" -eq "0" ]; then
         echo "Starting infinite IP changes"
