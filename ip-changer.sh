@@ -1,26 +1,21 @@
 #!/bin/bash
 
-[[ "$UID" -ne 0 ]] && {
-    echo "Script must be run as root."
-    exit 1
-}
-
 install_packages() {
-    local distro
-    distro=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
+    local distro=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
     distro=${distro//\"/}
     
     case "$distro" in
         *"Ubuntu"* | *"Debian"*)
-            apt-get update
-            apt-get install -y curl tor
+            sudo apt-get update
+            sudo apt-get install -y curl tor
             ;;
         *"Fedora"* | *"CentOS"* | *"Red Hat"* | *"Amazon Linux"*)
-            yum update
-            yum install -y curl tor
+            sudo yum update
+            sudo yum install -y curl tor
             ;;
         *"Arch"*)
-            pacman -S --noconfirm curl tor
+            sudo pacman -Sy
+            sudo pacman -S --noconfirm curl tor
             ;;
         *)
             echo "Unsupported distribution: $distro. Please install curl and tor manually."
@@ -36,20 +31,19 @@ fi
 
 if ! systemctl --quiet is-active tor.service; then
     echo "Starting tor service"
-    systemctl start tor.service
+    sudo systemctl start tor.service
 fi
 
 get_ip() {
-    local url get_ip ip
-    url="https://checkip.amazonaws.com"
-    get_ip=$(curl -s -x socks5h://127.0.0.1:9050 "$url")
-    ip=$(echo "$get_ip" | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}')
+    local url="https://checkip.amazonaws.com"
+    local get_ip=$(curl -s -x socks5h://127.0.0.1:9050 "$url")
+    local ip=$(echo "$get_ip" | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}')
     echo "$ip"
 }
 
 change_ip() {
     echo "Reloading tor service"
-    systemctl reload tor.service
+    sudo systemctl reload tor.service
     echo -e "\033[34mNew IP address: $(get_ip)\033[0m"
 }
 
@@ -64,8 +58,8 @@ cat << EOF
 EOF
 
 while true; do
-    read -rp $'\033[34mEnter time interval in seconds (type 0 for infinite IP changes): \033[0m' interval
-    read -rp $'\033[34mEnter number of times to change IP address (type 0 for infinite IP changes): \033[0m' times
+    read -p $'\033[34mEnter time interval in seconds (type 0 for infinite IP changes): \033[0m' interval
+    read -p $'\033[34mEnter number of times to change IP address (type 0 for infinite IP changes): \033[0m' times
 
     if [ "$interval" -eq "0" ] || [ "$times" -eq "0" ]; then
         echo "Starting infinite IP changes"
@@ -75,7 +69,7 @@ while true; do
             sleep "$interval"
         done
     else
-        for ((i=0; i< times; i++)); do
+        for ((i=0; i<$times; i++)); do
             change_ip
             sleep "$interval"
         done
