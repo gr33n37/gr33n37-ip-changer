@@ -6,19 +6,31 @@ Bash script that uses Tor to change your IP at specified intervals.
 
 ## Installation
 
-You can either `git clone` the repository or `curl` the Bash script.
+**Using `git clone`**
 
-Using `git clone`:
+1. Clone the repository:
 
 ```shell
 git clone https://github.com/gr33n37/gr33n37-ip-changer.git
+```
+
+2. Navigate to the cloned directory:
+
+```shell
 cd gr33n37-ip-changer
 ```
 
-Using `curl`:
+**Using `curl`**
+
+1. Download the Bash script:
 
 ```shell
 curl -O 'https://raw.githubusercontent.com/gr33n37/gr33n37-ip-changer/main/ip-changer.sh'
+```
+
+2. Make the script executable:
+
+```shell
 chmod +x ip-changer.sh
 ```
 
@@ -30,5 +42,9 @@ Run the script with root privileges:
 sudo ./ip-changer.sh
 ```
 
-First, enter how long you want to stay on one server before changing the IP.
-Then, enter how many times to change the IP. Enter 0 for unlimited changes.
+The script will prompt you for two values.
+
+## Instructions
+
+1. Enter the duration (in seconds) you want to stay on one server before changing the IP.
+2. Enter the duration (in seconds) you want to wait before changing the IP.
