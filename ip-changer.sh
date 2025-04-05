@@ -66,18 +66,24 @@ EOF
 while true; do
     read -rp $'\033[34mEnter time interval in seconds (type 0 for infinite IP changes): \033[0m' interval
     read -rp $'\033[34mEnter number of times to change IP address (type 0 for infinite IP changes): \033[0m' times
-
-    if [ "$interval" -eq "0" ] || [ "$times" -eq "0" ]; then
-        echo "Starting infinite IP changes"
-        while true; do
-            change_ip
-            interval=$(shuf -i 10-20 -n 1)
-            sleep "$interval"
-        done
+    
+    if ((interval < 0 )) || (( times < 0 )); then
+        echo -e "\033[31mPlease enter valid non-negative integers for both interval and times.\033[0m"
     else
-        for ((i=0; i< times; i++)); do
-            change_ip
-            sleep "$interval"
-        done
+        if [ "$interval" -eq "0" ] || [ "$times" -eq "0" ]; then
+            echo "Starting infinite IP changes"
+            while true; do
+                change_ip
+                interval=$(shuf -i 10-20 -n 1)
+                sleep "$interval"
+            done
+        else
+            for ((i=0; i< times; i++)); do
+                change_ip
+                sleep "$interval"
+            done
+        fi
     fi
+    
+    
 done
