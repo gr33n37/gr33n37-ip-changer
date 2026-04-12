@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AED709C62F832B4D00E70440 /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AED709C52F832B4D00E70440 /* PreferencePanes.framework */; };
+		AED709CC2F832B4D00E70440 /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AED709CB2F832B4D00E70440 /* Network.framework */; };
+		F81110082F832B4D00E70440 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F81110092F832B4D00E70440 /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AED709A22F832B4D00E70440 /* ipchanger.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ipchanger.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		AED709C52F832B4D00E70440 /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = System/Library/Frameworks/PreferencePanes.framework; sourceTree = SDKROOT; };
+		AED709CB2F832B4D00E70440 /* Network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Network.framework; path = System/Library/Frameworks/Network.framework; sourceTree = SDKROOT; };
+		F81110012F832B4D00E70440 /* IPChangerMenuBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPChangerMenuBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F81110092F832B4D00E70440 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		AED709AF2F832B4D00E70440 /* Exceptions for "ipchanger" folder in "ipchanger" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+				install_prefpane.sh,
+			);
+			target = AED709A12F832B4D00E70440 /* ipchanger */;
+		};
+		F81110042F832B4D00E70440 /* Exceptions for "IPChangerMenuBar" folder in "IPChangerMenuBar" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F81110022F832B4D00E70440 /* IPChangerMenuBar */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		AED709A42F832B4D00E70440 /* ipchanger */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				AED709AF2F832B4D00E70440 /* Exceptions for "ipchanger" folder in "ipchanger" target */,
+			);
+			path = ipchanger;
+			sourceTree = "<group>";
+		};
+		F81110032F832B4D00E70440 /* IPChangerMenuBar */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F81110042F832B4D00E70440 /* Exceptions for "IPChangerMenuBar" folder in "IPChangerMenuBar" target */,
+			);
+			path = IPChangerMenuBar;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AED7099F2F832B4D00E70440 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AED709C62F832B4D00E70440 /* PreferencePanes.framework in Frameworks */,
+				AED709CC2F832B4D00E70440 /* Network.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F81110052F832B4D00E70440 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F81110082F832B4D00E70440 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AED709982F832B4D00E70440 = {
+			isa = PBXGroup;
+			children = (
+				AED709A42F832B4D00E70440 /* ipchanger */,
+				F81110032F832B4D00E70440 /* IPChangerMenuBar */,
+				AED709A32F832B4D00E70440 /* Products */,
+				AED709C12F832F1B00E70440 /* Recovered References */,
+			);
+			sourceTree = "<group>";
+		};
+		AED709A32F832B4D00E70440 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AED709A22F832B4D00E70440 /* ipchanger.prefPane */,
+				F81110012F832B4D00E70440 /* IPChangerMenuBar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AED709C12F832F1B00E70440 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				AED709C52F832B4D00E70440 /* PreferencePanes.framework */,
+				AED709CB2F832B4D00E70440 /* Network.framework */,
+				F81110092F832B4D00E70440 /* Cocoa.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AED7099D2F832B4D00E70440 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AED709A12F832B4D00E70440 /* ipchanger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AED709B02F832B4D00E70440 /* Build configuration list for PBXNativeTarget "ipchanger" */;
+			buildPhases = (
+				AED7099D2F832B4D00E70440 /* Headers */,
+				AED7099E2F832B4D00E70440 /* Sources */,
+				AED7099F2F832B4D00E70440 /* Frameworks */,
+				AED709A02F832B4D00E70440 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				AED709A42F832B4D00E70440 /* ipchanger */,
+			);
+			name = ipchanger;
+			packageProductDependencies = (
+			);
+			productName = ipchanger;
+			productReference = AED709A22F832B4D00E70440 /* ipchanger.prefPane */;
+			productType = "com.apple.product-type.bundle";
+		};
+		F81110022F832B4D00E70440 /* IPChangerMenuBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F811100C2F832B4D00E70440 /* Build configuration list for PBXNativeTarget "IPChangerMenuBar" */;
+			buildPhases = (
+				F81110062F832B4D00E70440 /* Sources */,
+				F81110052F832B4D00E70440 /* Frameworks */,
+				F81110072F832B4D00E70440 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F81110032F832B4D00E70440 /* IPChangerMenuBar */,
+			);
+			name = IPChangerMenuBar;
+			packageProductDependencies = (
+			);
+			productName = IPChangerMenuBar;
+			productReference = F81110012F832B4D00E70440 /* IPChangerMenuBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AED709992F832B4D00E70440 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					AED709A12F832B4D00E70440 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					F81110022F832B4D00E70440 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+				};
+			};
+			buildConfigurationList = AED7099C2F832B4D00E70440 /* Build configuration list for PBXProject "ipchanger" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AED709982F832B4D00E70440;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = AED709A32F832B4D00E70440 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AED709A12F832B4D00E70440 /* ipchanger */,
+				F81110022F832B4D00E70440 /* IPChangerMenuBar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AED709A02F832B4D00E70440 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F81110072F832B4D00E70440 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AED7099E2F832B4D00E70440 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F81110062F832B4D00E70440 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AED709B12F832B4D00E70440 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X5NCDQ7769;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ipchanger/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "IP Changer";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = ipchanger;
+				INFOPLIST_KEY_NSPrincipalClass = ipchanger;
+				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.philodi.ipchanger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				WRAPPER_EXTENSION = prefPane;
+			};
+			name = Debug;
+		};
+		AED709B22F832B4D00E70440 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X5NCDQ7769;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ipchanger/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "IP Changer";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = ipchanger;
+				INFOPLIST_KEY_NSPrincipalClass = ipchanger;
+				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.philodi.ipchanger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				WRAPPER_EXTENSION = prefPane;
+			};
+			name = Release;
+		};
+		AED709B32F832B4D00E70440 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = X5NCDQ7769;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AED709B42F832B4D00E70440 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = X5NCDQ7769;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AED7099C2F832B4D00E70440 /* Build configuration list for PBXProject "ipchanger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AED709B32F832B4D00E70440 /* Debug */,
+				AED709B42F832B4D00E70440 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AED709B02F832B4D00E70440 /* Build configuration list for PBXNativeTarget "ipchanger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AED709B12F832B4D00E70440 /* Debug */,
+				AED709B22F832B4D00E70440 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F811100C2F832B4D00E70440 /* Build configuration list for PBXNativeTarget "IPChangerMenuBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F811100A2F832B4D00E70440 /* Debug */,
+				F811100B2F832B4D00E70440 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+		F811100A2F832B4D00E70440 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X5NCDQ7769;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = IPChangerMenuBar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "IP Changer";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.philodi.ipchanger.menubar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+			};
+			name = Debug;
+		};
+		F811100B2F832B4D00E70440 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X5NCDQ7769;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = IPChangerMenuBar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "IP Changer";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.philodi.ipchanger.menubar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+			};
+			name = Release;
+		};
+	};
+	rootObject = AED709992F832B4D00E70440 /* Project object */;
+}

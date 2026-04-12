@@ -1,0 +1,73 @@
+# Environment & generic secrets
+.env
+.env.*
+!.env.example
+*.secret
+secrets/
+**/secrets/
+credentials.json
+**/secrets/
+**/Credentials/
+
+# Apple code signing & distribution
+*.mobileprovision
+*.provisionprofile
+*.p12
+*.cer
+*.certSigningRequest
+*.csr
+DeveloperID*.cer
+distribution.*.cer
+
+# Apple services private keys (APNs, Sign in with Apple, API keys, etc.)
+AuthKey_*.p8
+**/private_keys/*.p8
+*.p8.key
+
+# PEM material (often private keys / cert bundles — adjust if you commit only public certs)
+*.pem
+*.key.pem
+*_key.pem
+
+# SSH / generic key material
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+*.ppk
+*.private-key
+
+# Keychain exports / local keychains (if ever placed in repo)
+*.keychain
+*.keychain-db
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+**/.DS_Store
+
+# Xcode & build (avoids accidental artifacts; may contain embedded signing data)
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift PM
+.swiftpm/configuration/registries.json
+.swiftpm/xcode/package.xcworkspace/xcuserdata/
+
+# CocoaPods / Carthage (if added later)
+Pods/
+Carthage/Build/
+
+# Fastlane (often holds API keys)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=IP Changer
+Comment=Tor exit identity, rotation, and system tray status
+Categories=Network;GTK;
+Icon=emblem-web
+Terminal=false
+Exec=ipchanger-gtk

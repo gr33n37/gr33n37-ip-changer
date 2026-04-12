@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+# Run IP Changer GTK UI from this directory (tray + settings).
+cd "$(dirname "$0")" || exit 1
+export PYTHONPATH="${PYTHONPATH:+$PYTHONPATH:}$(pwd)"
+exec python3 -m ipchanger_linux "$@"

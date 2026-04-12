@@ -1,0 +1,8 @@
+# Runtime: GTK and Ayatana AppIndicator are system packages on most distros.
+# Debian/Ubuntu examples:
+#   sudo apt install python3-gi python3-gir1.2-gtk-3.0 gir1.2-ayatanaappindicator3-0.1
+# Fedora:
+#   sudo dnf install python3-gobject gtk3 libayatana-appindicator-gtk3
+#
+# Pillow is optional but improves flag emoji fallback rendering for the tray icon.
+Pillow>=9.0,<12
