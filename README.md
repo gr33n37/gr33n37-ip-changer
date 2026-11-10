@@ -22,6 +22,13 @@ curl -O 'https://raw.githubusercontent.com/gr33n37/gr33n37-ip-changer/main/ip-ch
 chmod +x ip-changer.sh
 ```
 
+You must add to `/etc/tor/torrc`:
+
+```shell
+ControlPort 9051
+CookieAuthentication 1
+```
+
 ## Usage
 
 Run the script with root privileges:
