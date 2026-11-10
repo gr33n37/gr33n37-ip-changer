@@ -11,6 +11,10 @@ install_packages() {
     distro=${distro//\"/}
     
     case "$distro" in
+	*"openSUSE"* | *"SUSE"*)
+	    zypper refresh
+	    zypper install -y curl tor
+	    ;;   
         *"Ubuntu"* | *"Debian"*)
             apt-get update
             apt-get install -y curl tor
@@ -47,10 +51,23 @@ get_ip() {
     echo "$ip"
 }
 
+last_ip=""
+
 change_ip() {
-    echo "Reloading tor service"
-    systemctl reload tor.service
-    echo -e "\033[34mNew IP address: $(get_ip)\033[0m"
+    local new_ip cookie
+    cookie=$(xxd -p /run/tor/control.authcookie | tr -d '\n')
+    printf "AUTHENTICATE %s\r\nSIGNAL NEWNYM\r\nQUIT\r\n" "$cookie" | nc -q1 127.0.0.1 9051 &>/dev/null
+    sleep 5
+    new_ip=$(get_ip)
+
+    if [ -n "$last_ip" ] && [ "$last_ip" != "$new_ip" ]; then
+        echo -e "\033[32m✓ IP changed: $last_ip → $new_ip\033[0m"
+    elif [ -n "$last_ip" ]; then
+        echo -e "\033[31m✗ IP not changed: $new_ip\033[0m"
+    else
+        echo -e "\033[34mcurrent IP: $new_ip\033[0m"
+    fi
+    last_ip="$new_ip"
 }
 
 clear
