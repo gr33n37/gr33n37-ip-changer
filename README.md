@@ -11,14 +11,14 @@ You can either `git clone` the repository or `curl` the Bash script.
 Using `git clone`:
 
 ```shell
-git clone https://github.com/gr33n37/gr33n37-ip-changer.git
+git clone https://github.com/Mofarthim/gr33n37-ip-changer.git
 cd gr33n37-ip-changer
 ```
 
 Using `curl`:
 
 ```shell
-curl -O 'https://raw.githubusercontent.com/gr33n37/gr33n37-ip-changer/main/ip-changer.sh'
+curl -O 'https://raw.githubusercontent.com/Mofarthim/gr33n37-ip-changer/main/ip-changer.sh'
 chmod +x ip-changer.sh
 ```
 
